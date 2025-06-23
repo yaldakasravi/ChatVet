@@ -1,5 +1,3 @@
-# app/sidebar.py
-
 import streamlit as st
 from auth.auth import login_user, logout_user, get_current_user
 from auth.billing import get_subscription_status, toggle_subscription
