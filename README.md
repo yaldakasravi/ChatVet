@@ -45,7 +45,6 @@ chatvet/
 ├── auth/                 # Login flow, mock billing
 ├── configs/              # Prompt templates and UI settings
 ├── tests/                # Unit tests for RAG + LLM integration
-├── notebooks/            # Optional data exploration or demos
 ├── requirements.txt
 ├── README.md
 ├── .env                  # API keys (not included in repo)
