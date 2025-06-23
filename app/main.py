@@ -30,12 +30,14 @@ def main():
     user_input = render_chat_interface(chat_history)
 
     if user_input:
+        # Append user's message immediately
+        append_chat_message(user, "user", user_input)
+
         # Generate chatbot response
         with st.spinner("ChatVet is thinking..."):
             response = chatbot.ask(user_input)
 
-        # Append messages to history and update session
-        append_chat_message(user, "user", user_input)
+        # Append bot's response
         append_chat_message(user, "bot", response)
 
         # Rerun to update UI with new messages
