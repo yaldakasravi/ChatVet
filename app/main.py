@@ -1,9 +1,7 @@
-# app/main.py
-
 import streamlit as st
-from auth.auth import login_user, logout_user, get_current_user
-from auth.billing import get_subscription_status, toggle_subscription
-from session_manager import get_chat_history, append_chat_message, clear_chat_history
+from sidebar import render_sidebar
+from auth.auth import get_current_user
+from session_manager import get_chat_history, append_chat_message
 from chat_ui import render_chat_interface
 from chatbot import Chatbot
 
@@ -14,31 +12,11 @@ def main():
     st.set_page_config(page_title="ChatVet - Your Virtual Vet Assistant ", layout="wide")
     st.title("ChatVet - AI Pet Health Assistant")
 
-    # --- Sidebar ---
-    with st.sidebar:
-        st.header("User Account")
-        user = get_current_user()
+    # Render sidebar from sidebar.py
+    render_sidebar()
 
-        if user is None:
-            # Show login form
-            if st.button("Login (Demo)"):
-                login_user("demo_user")
-                st.experimental_rerun()
-        else:
-            st.write(f"Logged in as: **{user}**")
-            if st.button("Logout"):
-                logout_user()
-                clear_chat_history()
-                st.experimental_rerun()
+    user = get_current_user()
 
-            # Subscription toggle (simulate Stripe billing)
-            sub_status = get_subscription_status(user)
-            new_status = st.checkbox("Subscription Active", value=sub_status)
-            if new_status != sub_status:
-                toggle_subscription(user, new_status)
-                st.experimental_rerun()
-
-    # --- Main Chat Interface ---
     if user is None:
         st.info("Please login from the sidebar to start chatting with ChatVet.")
         return
