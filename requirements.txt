@@ -1,0 +1,10 @@
+streamlit>=1.22.0
+openai>=0.27.0
+langchain>=0.0.261
+pinecone-client>=2.2.1
+python-dotenv>=1.0.0
+PyMuPDF>=1.21.1
+pdfminer.six>=20221105
+scikit-learn>=1.2.2
+PyYAML>=6.0
+pytest>=7.4.0
