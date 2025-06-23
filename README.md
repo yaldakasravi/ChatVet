@@ -108,20 +108,3 @@ streamlit run app/main.py
 * Accessible AI vet assistant for pet owners in underserved areas
 
 ---
-
-## 📄 License
-
-MIT License © 2025 Yalda Kasravi Mavi
-
----
-
-## 🤖 Try It Online (Coming Soon)
-
-> 🔗 Hosted demo + live link will be added after deployment.
-
-```
-
----
-
-Let me know if you'd like a `requirements.txt` or a Dockerfile scaffold for this project too.
-```
