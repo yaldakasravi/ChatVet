@@ -1,0 +1,20 @@
+[theme]
+primaryColor = "#4CAF50"       # A fresh green to evoke health and pets
+backgroundColor = "#F0F2F6"    # Light, clean background
+secondaryBackgroundColor = "#E8F5E9"
+textColor = "#333333"
+font = "sans serif"
+
+[server]
+headless = true
+enableCORS = false
+
+[runner]
+showErrorDetails = true
+
+[global]
+hideStreamlitLogo = true
+hideFooter = true
+
+[layout]
+wideMode = true
