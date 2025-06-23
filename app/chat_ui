@@ -1,0 +1,28 @@
+import streamlit as st
+
+def render_chat_interface(chat_history):
+    """
+    Displays chat history and input box in Streamlit.
+
+    Args:
+        chat_history (list of dict): List of messages with
+            {"role": "user" or "bot", "content": "message text"}
+
+    Returns:
+        str or None: User input text if submitted, else None
+    """
+
+    # Display previous chat messages
+    for msg in chat_history:
+        if msg["role"] == "user":
+            st.markdown(f"**You:** {msg['content']}")
+        elif msg["role"] == "bot":
+            st.markdown(f"**ChatVet:** {msg['content']}")
+
+    # Input box for new user message
+    user_input = st.text_input("Type your message here and press Enter:")
+
+    if user_input:
+        return user_input.strip()
+
+    return None
